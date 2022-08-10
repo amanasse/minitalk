@@ -129,12 +129,11 @@ all :		client serveur
 .c.o:
 	${CC} ${CFLAGS} -c $< -I includes -o ${<:.c=.o}
 
-client :	${OBJS}
+client :	${OBJS} 
 			${CC} -o client ${CFLAGS} ${OBJS} 
 
 serveur :	${OBJS2}
 			${CC} -o serveur ${CFLAGS} ${OBJS2} 
-
 
 clean:
 			rm -f ${OBJS} ${OBJS2}
