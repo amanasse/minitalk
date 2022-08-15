@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:35:39 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/10 17:53:19 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/08/15 16:32:02 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int main ()
     
     while (1)
     {
-        signal = pause;
+        // signal = pause;
     }
     return (0);
 }
