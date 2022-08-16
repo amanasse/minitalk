@@ -58,7 +58,7 @@ SRCS    = 	main_client.c\
 		gnl/get_next_line.c\
 		gnl/get_next_line_utils.c
 
-SRCS2	=	main_serveur.c\
+SRCS2	=	main_server.c\
 		libft/ft_strlen.c\
 		libft/ft_atoi.c\
 		libft/ft_bzero.c\
@@ -124,7 +124,7 @@ HEADERS	= "minitalk.h"
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
 
-all :		client serveur
+all :		client server
 
 .c.o:
 	${CC} ${CFLAGS} -c $< -I includes -o ${<:.c=.o}
@@ -132,14 +132,14 @@ all :		client serveur
 client :	${OBJS} 
 			${CC} -o client ${CFLAGS} ${OBJS} 
 
-serveur :	${OBJS2}
-			${CC} -o serveur ${CFLAGS} ${OBJS2} 
+server :	${OBJS2}
+			${CC} -o server ${CFLAGS} ${OBJS2} 
 
 clean:
 			rm -f ${OBJS} ${OBJS2}
 
 fclean:		clean
-			rm -f client serveur
+			rm -f client server
 
 re:			fclean all
 
