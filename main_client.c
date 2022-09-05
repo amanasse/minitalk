@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:34:16 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/15 16:32:00 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/05 16:12:17 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,16 +109,11 @@ int main (int argc, char **argv)
 		while (chaine_octet[i] != '\0')
 		{
 			if (chaine_octet[i] == '1')
-			{
 				kill(ft_atoi(argv[1]), SIGUSR1);
-				usleep(90);
-			}
 			else
-			{	
 				kill(ft_atoi(argv[1]), SIGUSR2);
-				usleep(90);
-			}
 			i++;
+			usleep(180);
 		}
 		free(chaine_octet);
     }

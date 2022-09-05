@@ -59,6 +59,7 @@ SRCS    = 	main_client.c\
 		gnl/get_next_line_utils.c
 
 SRCS2	=	main_server.c\
+		main_server_utils.c\
 		libft/ft_strlen.c\
 		libft/ft_atoi.c\
 		libft/ft_bzero.c\

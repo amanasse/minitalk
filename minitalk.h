@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:09:49 by amanasse          #+#    #+#             */
-/*   Updated: 2022/08/16 15:41:54 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/05 15:52:56 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,22 @@
 # include "ft_printf/ft_printf.h"
 # include "gnl/get_next_line.h"
 
+# define BUFFER 2
 # define BUFFER_MAX 7
 
 typedef struct s_minitalk
 {
-    int x;
-    char buff[BUFFER_MAX];
-    
+    char 	buff[BUFFER_MAX];
+	char	str1[BUFFER];
+    char    *str_def;
+	char	*tmp;
+    int 	x;
+    int 	i;
+    int 	nb;
+    char 	a;
 }               t_minitalk;
+
+
 
 
 #endif
