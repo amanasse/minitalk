@@ -1,134 +1,143 @@
-SRCS    = 	main_client.c\
-		libft/ft_strlen.c\
-		libft/ft_atoi.c\
-		libft/ft_bzero.c\
-		libft/ft_calloc.c\
-		libft/ft_isalnum.c\
-		libft/ft_isalpha.c\
-		libft/ft_isascii.c\
-		libft/ft_isdigit.c\
-		libft/ft_isprint.c\
-		libft/ft_memchr.c\
-		libft/ft_memcmp.c\
-		libft/ft_memcpy.c\
-		libft/ft_memmove.c\
-		libft/ft_memset.c\
-		libft/ft_strchr.c\
-		libft/ft_strlcat.c\
-		libft/ft_strlcpy.c\
-		libft/ft_strncmp.c\
-		libft/ft_strnstr.c\
-		libft/ft_strrchr.c\
-		libft/ft_tolower.c\
-		libft/ft_toupper.c\
-		libft/ft_strdup.c\
-		libft/ft_substr.c\
-		libft/ft_strjoin.c\
-		libft/ft_strtrim.c\
-		libft/ft_split.c\
-		libft/ft_itoa.c\
-		libft/ft_strmapi.c\
-		libft/ft_striteri.c\
-		libft/ft_putchar_fd.c\
-		libft/ft_putstr_fd.c\
-		libft/ft_putendl_fd.c\
-		libft/ft_putnbr_fd.c\
-		libft/ft_lstnew.c\
-		libft/ft_lstadd_front.c\
-		libft/ft_lstsize.c\
-		libft/ft_lstlast.c\
-		libft/ft_lstadd_back.c\
-		libft/ft_lstdelone.c\
-		libft/ft_lstclear.c\
-		libft/ft_lstiter.c\
-		libft/ft_lstmap.c\
-		ft_printf/ft_strlen.c\
-		ft_printf/ft_char.c\
-		ft_printf/count_nb.c\
-		ft_printf/count_hexa.c\
-		ft_printf/ft_putchar.c\
-		ft_printf/ft_putnbr_base_x_x.c\
-		ft_printf/ft_printf.c\
-		ft_printf/ft_putnbr_base.c\
-		ft_printf/ft_putnbr_d_i.c\
-		ft_printf/ft_putnbr_u.c\
-		ft_printf/ft_string.c\
-		ft_printf/count_u.c\
-		ft_printf/count_hexa_x_x.c\
-		gnl/get_next_line.c\
-		gnl/get_next_line_utils.c
+SRCS    = 	sources/srcs_client/main_client.c\
+		sources/libft/ft_strlen.c\
+		sources/libft/ft_atoi.c\
+		sources/libft/ft_bzero.c\
+		sources/libft/ft_calloc.c\
+		sources/libft/ft_isalnum.c\
+		sources/libft/ft_isalpha.c\
+		sources/libft/ft_isascii.c\
+		sources/libft/ft_isdigit.c\
+		sources/libft/ft_isprint.c\
+		sources/libft/ft_memchr.c\
+		sources/libft/ft_memcmp.c\
+		sources/libft/ft_memcpy.c\
+		sources/libft/ft_memmove.c\
+		sources/libft/ft_memset.c\
+		sources/libft/ft_strchr.c\
+		sources/libft/ft_strlcat.c\
+		sources/libft/ft_strlcpy.c\
+		sources/libft/ft_strncmp.c\
+		sources/libft/ft_strnstr.c\
+		sources/libft/ft_strrchr.c\
+		sources/libft/ft_tolower.c\
+		sources/libft/ft_toupper.c\
+		sources/libft/ft_strdup.c\
+		sources/libft/ft_substr.c\
+		sources/libft/ft_strjoin.c\
+		sources/libft/ft_strtrim.c\
+		sources/libft/ft_split.c\
+		sources/libft/ft_itoa.c\
+		sources/libft/ft_strmapi.c\
+		sources/libft/ft_striteri.c\
+		sources/libft/ft_putchar_fd.c\
+		sources/libft/ft_putstr_fd.c\
+		sources/libft/ft_putendl_fd.c\
+		sources/libft/ft_putnbr_fd.c\
+		sources/libft/ft_lstnew.c\
+		sources/libft/ft_lstadd_front.c\
+		sources/libft/ft_lstsize.c\
+		sources/libft/ft_lstlast.c\
+		sources/libft/ft_lstadd_back.c\
+		sources/libft/ft_lstdelone.c\
+		sources/libft/ft_lstclear.c\
+		sources/libft/ft_lstiter.c\
+		sources/libft/ft_lstmap.c\
+		sources/ft_printf/ft_strlen.c\
+		sources/ft_printf/ft_char.c\
+		sources/ft_printf/count_nb.c\
+		sources/ft_printf/count_hexa.c\
+		sources/ft_printf/ft_putchar.c\
+		sources/ft_printf/ft_putnbr_base_x_x.c\
+		sources/ft_printf/ft_printf.c\
+		sources/ft_printf/ft_putnbr_base.c\
+		sources/ft_printf/ft_putnbr_d_i.c\
+		sources/ft_printf/ft_putnbr_u.c\
+		sources/ft_printf/ft_string.c\
+		sources/ft_printf/count_u.c\
+		sources/ft_printf/count_hexa_x_x.c\
+		sources/gnl/get_next_line.c\
+		sources/gnl/get_next_line_utils.c
 
-SRCS2	=	main_server.c\
-		main_server_utils.c\
-		libft/ft_strlen.c\
-		libft/ft_atoi.c\
-		libft/ft_bzero.c\
-		libft/ft_calloc.c\
-		libft/ft_isalnum.c\
-		libft/ft_isalpha.c\
-		libft/ft_isascii.c\
-		libft/ft_isdigit.c\
-		libft/ft_isprint.c\
-		libft/ft_memchr.c\
-		libft/ft_memcmp.c\
-		libft/ft_memcpy.c\
-		libft/ft_memmove.c\
-		libft/ft_memset.c\
-		libft/ft_strchr.c\
-		libft/ft_strlcat.c\
-		libft/ft_strlcpy.c\
-		libft/ft_strncmp.c\
-		libft/ft_strnstr.c\
-		libft/ft_strrchr.c\
-		libft/ft_tolower.c\
-		libft/ft_toupper.c\
-		libft/ft_strdup.c\
-		libft/ft_substr.c\
-		libft/ft_strjoin.c\
-		libft/ft_strtrim.c\
-		libft/ft_split.c\
-		libft/ft_itoa.c\
-		libft/ft_strmapi.c\
-		libft/ft_striteri.c\
-		libft/ft_putchar_fd.c\
-		libft/ft_putstr_fd.c\
-		libft/ft_putendl_fd.c\
-		libft/ft_putnbr_fd.c\
-		libft/ft_lstnew.c\
-		libft/ft_lstadd_front.c\
-		libft/ft_lstsize.c\
-		libft/ft_lstlast.c\
-		libft/ft_lstadd_back.c\
-		libft/ft_lstdelone.c\
-		libft/ft_lstclear.c\
-		libft/ft_lstiter.c\
-		libft/ft_lstmap.c\
-		ft_printf/ft_strlen.c\
-		ft_printf/ft_char.c\
-		ft_printf/count_nb.c\
-		ft_printf/count_hexa.c\
-		ft_printf/ft_putchar.c\
-		ft_printf/ft_putnbr_base_x_x.c\
-		ft_printf/ft_printf.c\
-		ft_printf/ft_putnbr_base.c\
-		ft_printf/ft_putnbr_d_i.c\
-		ft_printf/ft_putnbr_u.c\
-		ft_printf/ft_string.c\
-		ft_printf/count_u.c\
-		ft_printf/count_hexa_x_x.c\
-		gnl/get_next_line.c\
-		gnl/get_next_line_utils.c
+SRCS2	=	sources/srcs_server/main_server.c\
+		sources/srcs_server/server_utils.c\
+		sources/libft/ft_strlen.c\
+		sources/libft/ft_atoi.c\
+		sources/libft/ft_bzero.c\
+		sources/libft/ft_calloc.c\
+		sources/libft/ft_isalnum.c\
+		sources/libft/ft_isalpha.c\
+		sources/libft/ft_isascii.c\
+		sources/libft/ft_isdigit.c\
+		sources/libft/ft_isprint.c\
+		sources/libft/ft_memchr.c\
+		sources/libft/ft_memcmp.c\
+		sources/libft/ft_memcpy.c\
+		sources/libft/ft_memmove.c\
+		sources/libft/ft_memset.c\
+		sources/libft/ft_strchr.c\
+		sources/libft/ft_strlcat.c\
+		sources/libft/ft_strlcpy.c\
+		sources/libft/ft_strncmp.c\
+		sources/libft/ft_strnstr.c\
+		sources/libft/ft_strrchr.c\
+		sources/libft/ft_tolower.c\
+		sources/libft/ft_toupper.c\
+		sources/libft/ft_strdup.c\
+		sources/libft/ft_substr.c\
+		sources/libft/ft_strjoin.c\
+		sources/libft/ft_strtrim.c\
+		sources/libft/ft_split.c\
+		sources/libft/ft_itoa.c\
+		sources/libft/ft_strmapi.c\
+		sources/libft/ft_striteri.c\
+		sources/libft/ft_putchar_fd.c\
+		sources/libft/ft_putstr_fd.c\
+		sources/libft/ft_putendl_fd.c\
+		sources/libft/ft_putnbr_fd.c\
+		sources/libft/ft_lstnew.c\
+		sources/libft/ft_lstadd_front.c\
+		sources/libft/ft_lstsize.c\
+		sources/libft/ft_lstlast.c\
+		sources/libft/ft_lstadd_back.c\
+		sources/libft/ft_lstdelone.c\
+		sources/libft/ft_lstclear.c\
+		sources/libft/ft_lstiter.c\
+		sources/libft/ft_lstmap.c\
+		sources/ft_printf/ft_strlen.c\
+		sources/ft_printf/ft_char.c\
+		sources/ft_printf/count_nb.c\
+		sources/ft_printf/count_hexa.c\
+		sources/ft_printf/ft_putchar.c\
+		sources/ft_printf/ft_putnbr_base_x_x.c\
+		sources/ft_printf/ft_printf.c\
+		sources/ft_printf/ft_putnbr_base.c\
+		sources/ft_printf/ft_putnbr_d_i.c\
+		sources/ft_printf/ft_putnbr_u.c\
+		sources/ft_printf/ft_string.c\
+		sources/ft_printf/count_u.c\
+		sources/ft_printf/count_hexa_x_x.c\
+		sources/gnl/get_next_line.c\
+		sources/gnl/get_next_line_utils.c
 
-OBJS	= ${SRCS:.c=.o}
-OBJS2	= ${SRCS2:.c=.o}
-HEADERS	= "minitalk.h"
+DIR_SRC = sources/
+OBJ	= ${SRCS:.c=.o}
+OBJ2 = ${SRCS2:.c=.o}
+DIR_OBJ = sources/objs/
+OBJS = $(addprefix $(DIR_OBJ), $(OBJ))
+OBJS2 = $(addprefix $(DIR_OBJ), $(OBJ2))
+DEP = ${SRCS:.c=.d}
+DEP2 = ${SRCS2:.c=.d}
+DEPS = $(addprefix $(DIR_OBJ), $(DEP))
+DEPS2 = $(addprefix $(DIR_OBJ), $(DEP2))
+
+HEADERS	= -I includes
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -MMD -Wall -Wextra -Werror
 
 all :		client server
 
-.c.o:
-	${CC} ${CFLAGS} -c $< -I includes -o ${<:.c=.o}
+$(DIR_OBJ)%.o: $(DIR_SRC)%.c
+	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
 
 client :	${OBJS} 
 			${CC} -o client ${CFLAGS} ${OBJS} 
@@ -137,7 +146,7 @@ server :	${OBJS2}
 			${CC} -o server ${CFLAGS} ${OBJS2} 
 
 clean:
-			rm -f ${OBJS} ${OBJS2}
+			rm -f ${OBJS} ${OBJS2} ${DEPS} ${DEPS2}
 
 fclean:		clean
 			rm -f client server
@@ -145,3 +154,5 @@ fclean:		clean
 re:			fclean all
 
 .PHONY: all clean fclean re
+
+-include ${DEPS} ${DEPS2} 
