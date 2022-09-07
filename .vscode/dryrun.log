@@ -1,0 +1,7 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/nfs/homes/amanasse/Documents/CURSUS/minitalk/V2'
+gcc -MMD -Wall -Wextra -Werror -c sources/srcs_client/main_client.c -I includes -o sources/objs/main_client.o
+make -C ./sources/libft
+gcc -MMD -Wall -Wextra -Werror sources/objs/main_client.o ./sources/libft/libft.a -o client 
+make: Leaving directory '/mnt/nfs/homes/amanasse/Documents/CURSUS/minitalk/V2'
+ 

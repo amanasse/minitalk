@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:34:16 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/06 17:40:53 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/07 17:40:12 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ int main (int argc, char **argv)
 			i++;
 		}
 		str[i] = '\0';
-		// printf ("str = %s\n", str);
 		i = 0;
 		chaine_octet = malloc(1);
 		chaine_octet[0] = '\0';
@@ -99,12 +98,6 @@ int main (int argc, char **argv)
 		free(tmp2);
 		tmp = NULL;
 		tmp2 = NULL;
-
-		// printf ("str[i] = %c\n", str[i]);
-
-		// printf ("str_null = %s\n", str_null(str[i]));
-		// chaine_octet = ft_strjoin(chaine_octet, str_null(str[i]));
-		// printf ("chaine_octet = %s\n", chaine_octet);
 		i = 0;
 		while (chaine_octet[i] != '\0')
 		{
