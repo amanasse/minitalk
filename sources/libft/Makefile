@@ -69,15 +69,12 @@ ${NAME}:	${OBJS}
 all :		${NAME}
 
 clean:
-			rm -f ${OBJS} ${DEPS} ${OBJSBONUS}
+			rm -f ${OBJS} ${DEPS} 
 
 fclean:		clean
 			rm -f ${NAME}
 
 re:			fclean all
-
-bonus:		${OBJSBONUS} 
-			ar -rc ${NAME} ${OBJSBONUS} 
 
 .PHONY: all clean fclean re
 

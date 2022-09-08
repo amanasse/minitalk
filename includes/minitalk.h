@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:09:49 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/07 16:38:27 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/08 15:31:17 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,16 +29,23 @@
 
 typedef struct s_minitalk
 {
-    char 	buff[BUFFER_MAX];
+	char	buff[BUFFER_MAX];
 	char	str1[BUFFER];
-    char    *tmp;
-    char    *str_def;
-    int 	x;
-    int 	i;
-    int 	nb;
-    char 	a;
-}               t_minitalk;
+	char	*tmp;
+	char	*str_def;
+	int		x;
+	int		i;
+	int		nb;
+	char	a;
+}				t_minitalk;
 
-
+typedef struct s_client
+{
+	char	*str;
+	char	*chaine_octet;
+	int		i;
+	void	*tmp;
+	void	*tmp2;
+}				t_client;
 
 #endif

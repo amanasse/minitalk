@@ -6,19 +6,13 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:35:39 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/08 12:52:42 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/08 14:12:09 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
 t_minitalk	g_mini;
-
-void	join_my_char(void)
-{
-	g_mini.str1[0] = g_mini.nb;
-	g_mini.str1[1] = '\0';
-}
 
 char	bin_to_char(void)
 {
@@ -70,7 +64,8 @@ void	make_my_buff(char c)
 		}
 		else
 		{
-			join_my_char();
+			g_mini.str1[0] = g_mini.nb;
+			g_mini.str1[1] = '\0';
 			g_mini.tmp = g_mini.str_def;
 			g_mini.str_def = ft_strjoin(g_mini.str_def, g_mini.str1);
 			free (g_mini.tmp);
@@ -96,28 +91,29 @@ void	listen(int sig, siginfo_t *t_info, void *content)
 	}
 }
 
-int	main (int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	
-	struct sigaction sa;
-	// SA_SIGACTION POUR RECUP LE SIGNAL DE LEMETTEUR
-	
-	sigemptyset(&sa.sa_mask);
-	sigaddset(&sa.sa_mask, SIGINT);
-	sigaddset(&sa.sa_mask, SIGUSR1);
-	sigaddset(&sa.sa_mask, SIGUSR2);
-	init_mini();
-	sa.sa_sigaction = &listen;
-	sa.sa_flags = SA_RESTART;./	
-	printf("server OK : %d\n",getpid());
-	// sleep(1);
-	sigaction(SIGUSR1, &sa, NULL);
-	sigaction(SIGUSR2, &sa, NULL);
-	sigaction(SIGINT, &sa, NULL);
-	
-	while (1)
+	struct sigaction	sa;
+
+	(void) argv;
+	if (argc == 1)
 	{
-		// signal = pause;
+		sigemptyset(&sa.sa_mask);
+		sigaddset(&sa.sa_mask, SIGINT);
+		sigaddset(&sa.sa_mask, SIGUSR1);
+		sigaddset(&sa.sa_mask, SIGUSR2);
+		init_mini();
+		sa.sa_sigaction = &listen;
+		sa.sa_flags = SA_RESTART;
+		printf("server OK : %d\n", getpid());
+		sigaction(SIGUSR1, &sa, NULL);
+		sigaction(SIGUSR2, &sa, NULL);
+		sigaction(SIGINT, &sa, NULL);
+		while (1)
+		{
+		}
 	}
+	else
+		write (1, "Error\nNeed Only 1 Argument", 25);
 	return (0);
 }

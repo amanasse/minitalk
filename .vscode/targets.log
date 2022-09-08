@@ -5,9 +5,8 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
- 
 
-# Make data base, printed on Thu Sep  8 12:29:51 2022
+# Make data base, printed on Thu Sep  8 15:22:53 2022
 
 # Variables
 
@@ -254,7 +253,7 @@ DOCKER_HOST = unix:///run/user/101891/docker.sock
 # environment
 VSCODE_PID = 64697
 # variable set hash-table stats:
-# Load=121/1024=12%, Rehash=0, Collisions=14/172=8%
+# Load=121/1024=12%, Rehash=0, Collisions=16/178=9%
 
 # Pattern-specific Variable Values
 
@@ -262,11 +261,11 @@ VSCODE_PID = 64697
 
 # Directories
 
-# sources/srcs_client (device 57, inode 59090954): 3 files, no impossibilities.
+# sources/srcs_client (device 57, inode 59090954): No files, no impossibilities so far.
 # . (device 57, inode 59088908): 9 files, no impossibilities.
 # sources/srcs_server (device 57, inode 59090955): No files, no impossibilities so far.
 
-# 12 files, no impossibilities in 3 directories.
+# 9 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -278,24 +277,28 @@ sources/objs/%.o: sources/srcs_server/%.c
 #  recipe to execute (from 'Makefile', line 46):
 	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
 
+ 
 # 2 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
 all: client server
 #  Phony target (prerequisite of .PHONY).
- 
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 
 client: sources/objs/main_client.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-09-08 12:29:23.206267656
+#  Last modified 2022-09-08 15:06:20.224747584
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
 #  recipe to execute (from 'Makefile', line 23):
 			make -C ./sources/libft
 			${CC} ${CFLAGS} ${OBJS} ./sources/libft/libft.a -o client 
@@ -307,26 +310,21 @@ client: sources/objs/main_client.o
 
 # Not a target:
 sources/srcs_server/main_server.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-09-07 18:13:59.223836326
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 sources/objs/main_client.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-08 12:29:21.023255733
+#  Last modified 2022-09-08 15:06:20.139747119
 #  File has been updated.
 #  Successfully updated.
 
-sources/objs/server_utils.o: sources/srcs_server/server_utils.c sources/srcs_server/server_utils.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'server_utils'
-#  Last modified 2022-09-08 12:29:23.290268114
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 46):
-	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
+sources/objs/server_utils.o: sources/srcs_server/server_utils.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 Makefile:
@@ -337,9 +335,8 @@ Makefile:
 
 server: sources/objs/main_server.o sources/objs/server_utils.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-09-08 12:29:23.369268546
-#  File has been updated.
-#  Successfully updated.
+#  Modification time never checked.
+#  File has not been updated.
 #  recipe to execute (from 'Makefile', line 27):
 			make -C ./sources/libft
 			${CC} ${CFLAGS} ${OBJS2} ./sources/libft/libft.a -o server
@@ -347,14 +344,14 @@ server: sources/objs/main_server.o sources/objs/server_utils.o
 # Not a target:
 sources/srcs_client/../../includes/minitalk.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-07 16:38:27.204745078
+#  Last modified 2022-09-08 14:32:13.402533394
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 sources/objs/main_server.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-08 12:29:23.248267885
+#  Last modified 2022-09-08 14:37:04.26512828
 #  File has been updated.
 #  Successfully updated.
 
@@ -370,18 +367,35 @@ fclean: clean
 sources/objs/main_client.o: sources/srcs_client/main_client.c sources/srcs_client/main_client.c sources/srcs_client/../../includes/minitalk.h sources/srcs_client/../../includes/../sources/libft/includes/libft.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main_client'
-#  Last modified 2022-09-08 12:29:21.108256197
+#  Last modified 2022-09-08 15:06:20.150747179
 #  File has been updated.
-#  Successfully updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := sources/objs/main_client.o
+# automatic
+# % := 
+# automatic
+# * := main_client
+# automatic
+# + := sources/srcs_client/main_client.c sources/srcs_client/main_client.c sources/srcs_client/../../includes/minitalk.h sources/srcs_client/../../includes/../sources/libft/includes/libft.h
+# automatic
+# | := 
+# automatic
+# < := sources/srcs_client/main_client.c
+# automatic
+# ^ := sources/srcs_client/main_client.c sources/srcs_client/../../includes/minitalk.h sources/srcs_client/../../includes/../sources/libft/includes/libft.h
+# automatic
+# ? := sources/srcs_client/main_client.c
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
 #  recipe to execute (from 'Makefile', line 43):
 	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
 
 # Not a target:
 sources/srcs_server/../../includes/minitalk.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-09-07 16:38:27.204745078
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 .DEFAULT:
@@ -404,21 +418,16 @@ clean:
 			rm -f ${OBJS} ${OBJS2} ${DEPS} ${DEPS2}
 			make -C ./sources/libft clean
 
-sources/objs/main_server.o: sources/srcs_server/main_server.c sources/srcs_server/main_server.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
-#  Implicit rule search has been done.
-#  Implicit/static pattern stem: 'main_server'
-#  Last modified 2022-09-08 12:29:23.256267929
-#  File has been updated.
-#  Successfully updated.
-#  recipe to execute (from 'Makefile', line 46):
-	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
+sources/objs/main_server.o: sources/srcs_server/main_server.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 sources/srcs_server/server_utils.c:
-#  Implicit rule search has been done.
-#  Last modified 2022-09-06 17:41:12.925476954
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # Not a target:
 sources/srcs_client/../../includes/../sources/libft/includes/libft.h:
@@ -430,38 +439,37 @@ sources/srcs_client/../../includes/../sources/libft/includes/libft.h:
 # Not a target:
 sources/srcs_client/main_client.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-07 17:40:12.180830708
+#  Last modified 2022-09-08 15:16:47.169171294
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 sources/objs/server_utils.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-08 12:29:23.284268082
+#  Last modified 2022-09-08 14:37:04.301128477
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 sources/srcs_server/../../includes/../sources/libft/includes/libft.h:
-#  Implicit rule search has been done.
-#  Last modified 2022-09-07 18:10:51.235804288
-#  File has been updated.
-#  Successfully updated.
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
 
 # files hash-table stats:
-# Load=23/1024=2%, Rehash=0, Collisions=0/69=0%
+# Load=23/1024=2%, Rehash=0, Collisions=0/63=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 42 / storage = 858 B / avg = 20 B
-# current buf: size = 8162 B / used = 858 B / count = 42 / avg = 20 B
+# strcache buffers: 1 (0) / strings = 37 / storage = 750 B / avg = 20 B
+# current buf: size = 8162 B / used = 750 B / count = 37 / avg = 20 B
 
-# strcache performance: lookups = 85 / hit rate = 50%
+# strcache performance: lookups = 74 / hit rate = 50%
 # hash-table stats:
-# Load=42/8192=1%, Rehash=0, Collisions=2/85=2%
-# Finished Make data base on Thu Sep  8 12:29:51 2022
+# Load=37/8192=0%, Rehash=0, Collisions=1/74=1%
+# Finished Make data base on Thu Sep  8 15:22:53 2022
 
  

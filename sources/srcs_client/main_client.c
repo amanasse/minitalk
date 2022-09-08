@@ -6,109 +6,95 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:34:16 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/07 17:40:12 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/08 15:36:05 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
-char* binaire(char a)
+t_client	g_c;
+
+char	*binaire(char a)
 {
-    int i = 6;
-    char* octet = malloc(8);
- 
-    while (i >= 0)
-    {
-        octet[i] = (a & 1) + '0';
-        a >>= 1;
+	int		i;
+	char	*octet;
+
+	i = 6;
+	octet = malloc(8);
+	if (octet == NULL)
+		return (NULL);
+	while (i >= 0)
+	{
+		octet[i] = (a & 1) + '0';
+		a >>= 1;
 		i--;
-    }
-    octet[7] = '\0';
-    return octet;
+	}
+	octet[7] = '\0';
+	return (octet);
 }
 
-// char *str_null(char c)
-// {
-// 	char *str_null;
-// 	int i;
-
-// 	if (c == '\0')
-// 	{
-// 		str_null = malloc(8);
-// 		i = 0;
-// 		while (i < 7)
-// 		{
-// 			str_null[i] = '0';
-// 			i++;
-// 		}
-// 		str_null[i] = '\0';
-// 	}
-// 	return (str_null);
-// }
-
-int main (int argc, char **argv)
+int	make_chaine_octet(void)
 {
-    // printf("client OK :\n");
-    (void)argc;
-    if (argc == 1)
-    {
-    	write (2, "Write the ID from the serveur and ONE argument\n", 48);
+	g_c.tmp = binaire(g_c.str[g_c.i]);
+	if (g_c.tmp == NULL)
 		return (0);
-    }
+	g_c.tmp2 = g_c.chaine_octet;
+	g_c.chaine_octet = ft_strjoin(g_c.chaine_octet, g_c.tmp);
+	if (g_c.chaine_octet == NULL)
+	{
+		free(g_c.tmp);
+		free(g_c.tmp2);
+		g_c.tmp = NULL;
+		g_c.tmp2 = NULL;
+		return (0);
+	}
+	free(g_c.tmp);
+	free(g_c.tmp2);
+	g_c.tmp = NULL;
+	g_c.tmp2 = NULL;
+	return (1);
+}
+
+void	send_signal(char **argv)
+{
+	g_c.i = 0;
+	while (g_c.chaine_octet[g_c.i] != '\0')
+	{
+		if (g_c.chaine_octet[g_c.i] == '1')
+			kill(ft_atoi(argv[1]), SIGUSR1);
+		else
+			kill(ft_atoi(argv[1]), SIGUSR2);
+		g_c.i++;
+		usleep(180);
+	}
+	free(g_c.chaine_octet);
+}
+
+int	main(int argc, char **argv)
+{
+	if (argc == 1)
+		write (2, "Error\nWrite the ID from the serveur\n", 36);
 	else if (argc == 2)
-    {
-    	write (2, "Write ONE MORE argument\n", 25);
-		return (0);
-    }
-    else if (argc == 3)
-    {
-		char *str;
-		char *chaine_octet;
-		int i;
-		void *tmp;
-		void *tmp2;
-
-		str = argv[2];
-		i = 0;
-		while (argv[2][i])
+		write (2, "Error\nWrite ONE MORE argument\n", 30);
+	else if (argc == 3)
+	{
+		g_c.str = argv[2];
+		g_c.i = 0;
+		g_c.chaine_octet = malloc(1);
+		if (g_c.chaine_octet == NULL)
+			return (0);
+		g_c.chaine_octet[0] = '\0';
+		while (g_c.str[g_c.i])
 		{
-			str[i] = argv[2][i];
-			i++;
+			if (make_chaine_octet() == 0)
+				return (0);
+			g_c.i++;
 		}
-		str[i] = '\0';
-		i = 0;
-		chaine_octet = malloc(1);
-		chaine_octet[0] = '\0';
-		while (str[i])
-		{
-			tmp = binaire(str[i]);
-			tmp2 = chaine_octet;
-			chaine_octet = ft_strjoin(chaine_octet, tmp);
-			free(tmp);
-			free(tmp2);
-			tmp = NULL;
-			tmp2 = NULL;
-			i++;
-		}
-
-		tmp = binaire(str[i]);
-		tmp2 = chaine_octet;
-		chaine_octet = ft_strjoin(chaine_octet, tmp);
-		free(tmp);
-		free(tmp2);
-		tmp = NULL;
-		tmp2 = NULL;
-		i = 0;
-		while (chaine_octet[i] != '\0')
-		{
-			if (chaine_octet[i] == '1')
-				kill(ft_atoi(argv[1]), SIGUSR1);
-			else
-				kill(ft_atoi(argv[1]), SIGUSR2);
-			i++;
-			usleep(180);
-		}
-		free(chaine_octet);
-    }
-    return (0);
+		if (make_chaine_octet() == 0)
+			return (0);
+		send_signal(argv);
+	}
+	else if (argc > 3)
+		write (2, "Error\nToo many Arguments\n", 25);
+	return (0);
 }
