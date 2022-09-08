@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 12:35:39 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/07 18:13:59 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/08 12:52:42 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,17 +55,16 @@ void	init_mini(void)
 	g_mini.str_def[0] = '\0';
 }
 
-void    make_my_buff (char c)
+void	make_my_buff(char c)
 {
-    g_mini.buff[g_mini.x] = c;
-    g_mini.x += 1;
-		
-    if (g_mini.x == BUFFER_MAX)
-    {
+	g_mini.buff[g_mini.x] = c;
+	g_mini.x += 1;
+	if (g_mini.x == BUFFER_MAX)
+	{
 		if (bin_to_char() == 0)
 		{
 			ft_putstr_fd(g_mini.str_def, 1);
-			write(1,"\n", 1);
+			write(1, "\n", 1);
 			free(g_mini.str_def);
 			init_mini();
 		}
@@ -78,15 +77,16 @@ void    make_my_buff (char c)
 			g_mini.tmp = NULL;
 			g_mini.x = 0;
 		}
-    }
+	}
 }
 
-
-void    listen(int sig)
+void	listen(int sig, siginfo_t *t_info, void *content)
 {
-    if (sig == SIGUSR1)
+	(void) t_info;
+	(void) content;
+	if (sig == SIGUSR1)
 		make_my_buff('1');
-    else if (sig == SIGUSR2)
+	else if (sig == SIGUSR2)
 		make_my_buff('0');
 	else if (sig == SIGINT)
 	{
@@ -96,27 +96,28 @@ void    listen(int sig)
 	}
 }
 
-int main ()
+int	main (int argc, char **argv)
 {
-    struct sigaction sa;
-    // SA_SIGACTION POUR RECUP LE SIGNAL DE LEMETTEUR
+	
+	struct sigaction sa;
+	// SA_SIGACTION POUR RECUP LE SIGNAL DE LEMETTEUR
 	
 	sigemptyset(&sa.sa_mask);
 	sigaddset(&sa.sa_mask, SIGINT);
 	sigaddset(&sa.sa_mask, SIGUSR1);
 	sigaddset(&sa.sa_mask, SIGUSR2);
 	init_mini();
-    sa.sa_handler = listen;
-    sa.sa_flags = SA_RESTART;
-    printf("server OK : %d\n",getpid());
-    // sleep(1);
-    sigaction(SIGUSR1, &sa, NULL);
-    sigaction(SIGUSR2, &sa, NULL);
-    sigaction(SIGINT, &sa, NULL);
-    
-    while (1)
-    {
-        // signal = pause;
-    }
-    return (0);
+	sa.sa_sigaction = &listen;
+	sa.sa_flags = SA_RESTART;./	
+	printf("server OK : %d\n",getpid());
+	// sleep(1);
+	sigaction(SIGUSR1, &sa, NULL);
+	sigaction(SIGUSR2, &sa, NULL);
+	sigaction(SIGINT, &sa, NULL);
+	
+	while (1)
+	{
+		// signal = pause;
+	}
+	return (0);
 }

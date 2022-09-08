@@ -5,8 +5,9 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
+ 
 
-# Make data base, printed on Wed Sep  7 17:40:39 2022
+# Make data base, printed on Thu Sep  8 12:29:51 2022
 
 # Variables
 
@@ -43,9 +44,11 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 9:319582
+_ = /usr/bin/code
 # makefile (from 'Makefile', line 20)
 CFLAGS = -MMD -Wall -Wextra -Werror
+# environment
+JOURNAL_STREAM = 9:344923
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # makefile (from 'sources/objs/server_utils.d', line 1)
@@ -61,21 +64,19 @@ MANDATORY_PATH = /usr/share/gconf/ubuntu.mandatory.path
 # environment
 XDG_DATA_DIRS = /usr/share/gnome:/usr/share/ubuntu:/mnt/nfs/homes/amanasse/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
 # environment
-DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101891/bus,guid=64927f2133c8045f04af7ab2631868c0
-# environment
-_ = /usr/bin/code
+DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/101891/bus
 # makefile (from 'Makefile', line 16)
 DEPS2 = $(addprefix $(DIR_OBJ), $(DEP2))
 # makefile (from 'Makefile', line 11)
 OBJS = $(addprefix $(DIR_OBJ), $(OBJ))
 # environment
-MANAGERPID = 44229
+MANAGERPID = 61063
 # environment
 VSCODE_CWD = /mnt/nfs/homes/amanasse/Documents/CURSUS/minitalk/V2
 # environment
-XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session0
+XDG_SESSION_PATH = /org/freedesktop/DisplayManager/Session1
 # environment
-KRB5CCNAME = FILE:/tmp/krb5cc_101891_c7SY3w
+KRB5CCNAME = FILE:/tmp/krb5cc_101891_KM8BAT
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -89,7 +90,7 @@ DEP = ${SRCS:.c=.d}
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/e2r12p9.clusters.42paris.fr:@/tmp/.ICE-unix/44768,unix/e2r12p9.clusters.42paris.fr:/tmp/.ICE-unix/44768
+SESSION_MANAGER = local/e1r12p9.clusters.42paris.fr:@/tmp/.ICE-unix/61582,unix/e1r12p9.clusters.42paris.fr:/tmp/.ICE-unix/61582
 # environment
 XDG_RUNTIME_DIR = /run/user/101891
 # makefile (from 'Makefile', line 6)
@@ -99,7 +100,7 @@ XDG_MENU_PREFIX = gnome-
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # environment
-INVOCATION_ID = 8d2b9bddae294d4d9e1e865349e35bde
+INVOCATION_ID = fbf751ca8d98477abc972603968552ce
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -121,7 +122,7 @@ PWD = /mnt/nfs/homes/amanasse/Documents/CURSUS/minitalk/V2
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 44732
+SSH_AGENT_PID = 61551
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -133,7 +134,7 @@ HOME = /mnt/nfs/homes/amanasse
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/amanasse/.config/Code/CachedData/3b889b090b5ad5793f524b5d1d39fda662b96a2a
+VSCODE_CODE_CACHE_PATH = /mnt/nfs/homes/amanasse/.config/Code/CachedData/784b0177c56c607789f9638da7b6bf3230d47a8c
 # environment
 LOGNAME = amanasse
 # environment
@@ -187,7 +188,7 @@ DIR_OBJ = sources/objs/
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /mnt/nfs/homes/amanasse/Documents/CURSUS/minitalk/V2
+OLDPWD = /mnt/nfs/homes/amanasse/Documents/CURSUS/minitalk
 # default
 .VARIABLES := 
 # automatic
@@ -195,23 +196,19 @@ OLDPWD = /mnt/nfs/homes/amanasse/Documents/CURSUS/minitalk/V2
 # environment
 XDG_SEAT_PATH = /org/freedesktop/DisplayManager/Seat0
 # environment
-VSCODE_IPC_HOOK = /run/user/101891/vscode-285c0dd6-1.69.2-main.sock
+VSCODE_IPC_HOOK = /run/user/101891/vscode-285c0dd6-1.71.0-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
 MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
-# makefile (from 'Makefile', line 3)
-SRCS2 = main_server.c server_utils.c
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
 GDK_BACKEND = x11
 # automatic
 +F = $(notdir $+)
-# environment
-NO_AT_BRIDGE = 1
 # makefile (from 'Makefile', line 7)
 DIR_SRC_SERVER = ./sources/srcs_server/
 # environment
@@ -226,22 +223,26 @@ MAKEFILES :=
 PAGER = less
 # environment
 LC_ALL = C
+# makefile (from 'Makefile', line 3)
+SRCS2 = main_server.c server_utils.c
 # environment
-DBUS_STARTER_BUS_TYPE = session
+GJS_DEBUG_TOPICS = JS ERROR;JS LOG
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5ab470df_0b4a_450f_927b_673936a5377f
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/7998a8c5_5f34_4078_bbc6_d630738f60f8
 # automatic
 ^F = $(notdir $^)
 # makefile (from 'Makefile', line 15)
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 # environment
-GNOME_TERMINAL_SERVICE = :1.84
+GNOME_TERMINAL_SERVICE = :1.88
 # default
 SUFFIXES := 
 # environment
 CHROME_DESKTOP = code-url-handler.desktop
 # default
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
+# environment
+GJS_DEBUG_OUTPUT = stderr
 # default
 .RECIPEPREFIX := 
 # environment
@@ -251,11 +252,9 @@ TERM = xterm-256color
 # environment
 DOCKER_HOST = unix:///run/user/101891/docker.sock
 # environment
-VSCODE_PID = 49168
-# environment
-DBUS_STARTER_ADDRESS = unix:path=/run/user/101891/bus,guid=64927f2133c8045f04af7ab2631868c0
+VSCODE_PID = 64697
 # variable set hash-table stats:
-# Load=122/1024=12%, Rehash=0, Collisions=19/179=11%
+# Load=121/1024=12%, Rehash=0, Collisions=14/172=8%
 
 # Pattern-specific Variable Values
 
@@ -263,11 +262,11 @@ DBUS_STARTER_ADDRESS = unix:path=/run/user/101891/bus,guid=64927f2133c8045f04af7
 
 # Directories
 
-# sources/srcs_client (device 59, inode 59090954): No files, no impossibilities so far.
-# . (device 59, inode 59088908): 11 files, no impossibilities.
-# sources/srcs_server (device 59, inode 59090955): No files, no impossibilities so far.
+# sources/srcs_client (device 57, inode 59090954): 3 files, no impossibilities.
+# . (device 57, inode 59088908): 9 files, no impossibilities.
+# sources/srcs_server (device 57, inode 59090955): No files, no impossibilities so far.
 
-# 11 files, no impossibilities in 3 directories.
+# 12 files, no impossibilities in 3 directories.
 
 # Implicit Rules
 
@@ -277,7 +276,6 @@ sources/objs/%.o: sources/srcs_client/%.c
 
 sources/objs/%.o: sources/srcs_server/%.c
 #  recipe to execute (from 'Makefile', line 46):
- 
 	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
 
 # 2 implicit rules, 0 (0.0%) terminal.
@@ -286,21 +284,18 @@ sources/objs/%.o: sources/srcs_server/%.c
 
 all: client server
 #  Phony target (prerequisite of .PHONY).
+ 
 #  Command line target.
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 
 client: sources/objs/main_client.o
 #  Implicit rule search has not been done.
-#  Last modified 2022-09-07 16:53:41.769696813
+#  Last modified 2022-09-08 12:29:23.206267656
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/6=0%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 23):
 			make -C ./sources/libft
 			${CC} ${CFLAGS} ${OBJS} ./sources/libft/libft.a -o client 
@@ -312,21 +307,26 @@ client: sources/objs/main_client.o
 
 # Not a target:
 sources/srcs_server/main_server.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-09-07 18:13:59.223836326
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 sources/objs/main_client.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-07 16:53:41.651696174
+#  Last modified 2022-09-08 12:29:21.023255733
 #  File has been updated.
 #  Successfully updated.
 
-sources/objs/server_utils.o: sources/srcs_server/server_utils.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+sources/objs/server_utils.o: sources/srcs_server/server_utils.c sources/srcs_server/server_utils.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'server_utils'
+#  Last modified 2022-09-08 12:29:23.290268114
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
 
 # Not a target:
 Makefile:
@@ -337,8 +337,9 @@ Makefile:
 
 server: sources/objs/main_server.o sources/objs/server_utils.o
 #  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Last modified 2022-09-08 12:29:23.369268546
+#  File has been updated.
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 27):
 			make -C ./sources/libft
 			${CC} ${CFLAGS} ${OBJS2} ./sources/libft/libft.a -o server
@@ -353,7 +354,7 @@ sources/srcs_client/../../includes/minitalk.h:
 # Not a target:
 sources/objs/main_server.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-07 17:39:19.187543303
+#  Last modified 2022-09-08 12:29:23.248267885
 #  File has been updated.
 #  Successfully updated.
 
@@ -369,35 +370,18 @@ fclean: clean
 sources/objs/main_client.o: sources/srcs_client/main_client.c sources/srcs_client/main_client.c sources/srcs_client/../../includes/minitalk.h sources/srcs_client/../../includes/../sources/libft/includes/libft.h
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: 'main_client'
-#  Last modified 2022-09-07 16:53:41.660696223
+#  Last modified 2022-09-08 12:29:21.108256197
 #  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := sources/objs/main_client.o
-# automatic
-# % := 
-# automatic
-# * := main_client
-# automatic
-# + := sources/srcs_client/main_client.c sources/srcs_client/main_client.c sources/srcs_client/../../includes/minitalk.h sources/srcs_client/../../includes/../sources/libft/includes/libft.h
-# automatic
-# | := 
-# automatic
-# < := sources/srcs_client/main_client.c
-# automatic
-# ^ := sources/srcs_client/main_client.c sources/srcs_client/../../includes/minitalk.h sources/srcs_client/../../includes/../sources/libft/includes/libft.h
-# automatic
-# ? := sources/srcs_client/main_client.c
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/16=6%
+#  Successfully updated.
 #  recipe to execute (from 'Makefile', line 43):
 	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
 
 # Not a target:
 sources/srcs_server/../../includes/minitalk.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-09-07 16:38:27.204745078
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 .DEFAULT:
@@ -420,21 +404,26 @@ clean:
 			rm -f ${OBJS} ${OBJS2} ${DEPS} ${DEPS2}
 			make -C ./sources/libft clean
 
-sources/objs/main_server.o: sources/srcs_server/main_server.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+sources/objs/main_server.o: sources/srcs_server/main_server.c sources/srcs_server/main_server.c sources/srcs_server/../../includes/minitalk.h sources/srcs_server/../../includes/../sources/libft/includes/libft.h
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'main_server'
+#  Last modified 2022-09-08 12:29:23.256267929
+#  File has been updated.
+#  Successfully updated.
+#  recipe to execute (from 'Makefile', line 46):
+	${CC} ${CFLAGS} -c $< ${HEADERS} -o $@
 
 # Not a target:
 sources/srcs_server/server_utils.c:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-09-06 17:41:12.925476954
+#  File has been updated.
+#  Successfully updated.
 
 # Not a target:
 sources/srcs_client/../../includes/../sources/libft/includes/libft.h:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-07 16:45:53.725161089
+#  Last modified 2022-09-07 18:10:51.235804288
 #  File has been updated.
 #  Successfully updated.
 
@@ -448,30 +437,31 @@ sources/srcs_client/main_client.c:
 # Not a target:
 sources/objs/server_utils.d:
 #  Implicit rule search has been done.
-#  Last modified 2022-09-07 16:46:33.741377892
+#  Last modified 2022-09-08 12:29:23.284268082
 #  File has been updated.
 #  Successfully updated.
 
 # Not a target:
 sources/srcs_server/../../includes/../sources/libft/includes/libft.h:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+#  Implicit rule search has been done.
+#  Last modified 2022-09-07 18:10:51.235804288
+#  File has been updated.
+#  Successfully updated.
 
 # files hash-table stats:
-# Load=23/1024=2%, Rehash=0, Collisions=0/63=0%
+# Load=23/1024=2%, Rehash=0, Collisions=0/69=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 39 / storage = 774 B / avg = 19 B
-# current buf: size = 8162 B / used = 774 B / count = 39 / avg = 19 B
+# strcache buffers: 1 (0) / strings = 42 / storage = 858 B / avg = 20 B
+# current buf: size = 8162 B / used = 858 B / count = 42 / avg = 20 B
 
-# strcache performance: lookups = 76 / hit rate = 48%
+# strcache performance: lookups = 85 / hit rate = 50%
 # hash-table stats:
-# Load=39/8192=0%, Rehash=0, Collisions=1/76=1%
-# Finished Make data base on Wed Sep  7 17:40:39 2022
+# Load=42/8192=1%, Rehash=0, Collisions=2/85=2%
+# Finished Make data base on Thu Sep  8 12:29:51 2022
 
  
