@@ -41,6 +41,7 @@ SRC    = 	ft_strlen.c\
 			ft_lstclear.c\
 			ft_lstiter.c\
 			ft_lstmap.c\
+			ft_str_is_numeric.c\
 			get_next_line.c\
 			get_next_line_utils.c
 

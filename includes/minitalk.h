@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:09:49 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/08 15:31:17 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:19:17 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define BUFFER 2
 # define BUFFER_MAX 7
 
-typedef struct s_minitalk
+typedef struct s_server
 {
 	char	buff[BUFFER_MAX];
 	char	str1[BUFFER];
@@ -37,7 +37,7 @@ typedef struct s_minitalk
 	int		i;
 	int		nb;
 	char	a;
-}				t_minitalk;
+}				t_server;
 
 typedef struct s_client
 {
@@ -47,5 +47,7 @@ typedef struct s_client
 	void	*tmp;
 	void	*tmp2;
 }				t_client;
+
+void	put_my_buff(t_server *g_mini);
 
 #endif

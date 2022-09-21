@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:14:30 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/07 18:10:51 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:16:30 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,5 +85,7 @@ char	*ft_strdup_gnl(char *s);
 char	*get_next_line(int fd);
 int		check_sep(char *str);
 char	*stock_line_last(char *dest);
+
+int		ft_str_is_numeric(char *str);
 
 #endif

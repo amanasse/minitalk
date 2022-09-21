@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   server_utils.c                                     :+:      :+:    :+:   */
+/*   ft_str_is_numeric.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 16:56:33 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/20 16:19:25 by amanasse         ###   ########.fr       */
+/*   Created: 2022/02/07 10:06:49 by amanasse          #+#    #+#             */
+/*   Updated: 2022/09/21 15:35:35 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/minitalk.h"
+#include "../includes/libft.h"
 
-void	put_my_buff(t_server *g_mini)
+int	ft_str_is_numeric(char *str)
 {
-	g_mini->str1[0] = g_mini->nb;
-	g_mini->str1[1] = '\0';
-	g_mini->tmp = g_mini->str_def;
-	g_mini->str_def = ft_strjoin(g_mini->str_def, g_mini->str1);
-	if (g_mini->str_def == NULL)
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
 	{
-		free (g_mini->tmp);
-		exit (0);
+		if (str[i] < 48 || str[i] > 57)
+			return (0);
+		i++;
 	}
-	free (g_mini->tmp);
-	g_mini->tmp = NULL;
-	g_mini->x = 0;
+	return (1);
 }

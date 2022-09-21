@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:34:16 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/08 15:36:05 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/21 15:21:39 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ char	*binaire(char a)
 		return (NULL);
 	while (i >= 0)
 	{
-		octet[i] = (a & 1) + '0';
-		a >>= 1;
+		octet[i] = a % 2 + '0';
+		a = a / 2;
 		i--;
 	}
 	octet[7] = '\0';
@@ -60,12 +60,21 @@ void	send_signal(char **argv)
 	g_c.i = 0;
 	while (g_c.chaine_octet[g_c.i] != '\0')
 	{
-		if (g_c.chaine_octet[g_c.i] == '1')
+		if (g_c.chaine_octet[g_c.i] == '1' && ft_atoi(argv[1]) > 0)
 			kill(ft_atoi(argv[1]), SIGUSR1);
-		else
+		else if (g_c.chaine_octet[g_c.i] == '0' && ft_atoi(argv[1]) > 0)
 			kill(ft_atoi(argv[1]), SIGUSR2);
+		else
+		{
+			write (2, "Error\n", 6);
+			free(g_c.tmp);
+			free(g_c.chaine_octet);
+			g_c.tmp = NULL;
+			g_c.chaine_octet = NULL;
+			exit(0);
+		}
 		g_c.i++;
-		usleep(180);
+		usleep(TIME_TO_SLEEP);
 	}
 	free(g_c.chaine_octet);
 }

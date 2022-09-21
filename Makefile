@@ -1,7 +1,7 @@
 SRCS    = 	main_client.c
 
 SRCS2	=	main_server.c\
-		server_utils.c
+			server_utils.c
 
 DIR_SRC_CLIENT = ./sources/srcs_client/
 DIR_SRC_SERVER = ./sources/srcs_server/
@@ -17,7 +17,11 @@ DEPS2 = $(addprefix $(DIR_OBJ), $(DEP2))
 
 HEADERS	= -I includes
 CC		= gcc
-CFLAGS	= -MMD -Wall -Wextra -Werror
+CFLAGS	= -D TIME_TO_SLEEP=190 -MMD -Wall -Wextra -Werror
+
+NAME = minitalk
+
+${NAME} : client server
 
 client :	${OBJS}
 			make -C ./sources/libft
@@ -47,4 +51,4 @@ $(DIR_OBJ)%.o: $(DIR_SRC_SERVER)%.c
 
 -include ${DEPS} ${DEPS2}
 
-.PHONY: all clean fclean re
+.PHONY: all client server clean fclean re
