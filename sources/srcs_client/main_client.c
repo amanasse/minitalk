@@ -6,13 +6,35 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:34:16 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/21 15:21:39 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:53:14 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/minitalk.h"
 
 t_client	g_c;
+
+int	check_arg(char **argv)
+{
+	g_c.av = ft_atoi(argv[1]);
+	if (g_c.av <= 0)
+	{
+		write (2, "Error\n", 6);
+		return (0);
+	}
+	if (kill(g_c.av, 0) != 0)
+	{
+		write (2, "Error\nWrong PID\n", 16);
+		return (0);
+	}
+	g_c.str = argv[2];
+	g_c.i = 0;
+	g_c.chaine_octet = malloc(1);
+	if (g_c.chaine_octet == NULL)
+		return (0);
+	g_c.chaine_octet[0] = '\0';
+	return (1);
+}
 
 char	*binaire(char a)
 {
@@ -55,15 +77,15 @@ int	make_chaine_octet(void)
 	return (1);
 }
 
-void	send_signal(char **argv)
+void	send_signal(void)
 {
 	g_c.i = 0;
 	while (g_c.chaine_octet[g_c.i] != '\0')
 	{
-		if (g_c.chaine_octet[g_c.i] == '1' && ft_atoi(argv[1]) > 0)
-			kill(ft_atoi(argv[1]), SIGUSR1);
-		else if (g_c.chaine_octet[g_c.i] == '0' && ft_atoi(argv[1]) > 0)
-			kill(ft_atoi(argv[1]), SIGUSR2);
+		if (g_c.chaine_octet[g_c.i] == '1' && g_c.av > 0)
+			kill(g_c.av, SIGUSR1);
+		else if (g_c.chaine_octet[g_c.i] == '0' && g_c.av > 0)
+			kill(g_c.av, SIGUSR2);
 		else
 		{
 			write (2, "Error\n", 6);
@@ -87,12 +109,8 @@ int	main(int argc, char **argv)
 		write (2, "Error\nWrite ONE MORE argument\n", 30);
 	else if (argc == 3)
 	{
-		g_c.str = argv[2];
-		g_c.i = 0;
-		g_c.chaine_octet = malloc(1);
-		if (g_c.chaine_octet == NULL)
+		if (check_arg(argv) == 0)
 			return (0);
-		g_c.chaine_octet[0] = '\0';
 		while (g_c.str[g_c.i])
 		{
 			if (make_chaine_octet() == 0)
@@ -101,7 +119,7 @@ int	main(int argc, char **argv)
 		}
 		if (make_chaine_octet() == 0)
 			return (0);
-		send_signal(argv);
+		send_signal();
 	}
 	else if (argc > 3)
 		write (2, "Error\nToo many Arguments\n", 25);

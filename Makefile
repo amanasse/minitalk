@@ -17,7 +17,7 @@ DEPS2 = $(addprefix $(DIR_OBJ), $(DEP2))
 
 HEADERS	= -I includes
 CC		= gcc
-CFLAGS	= -D TIME_TO_SLEEP=190 -MMD -Wall -Wextra -Werror
+CFLAGS	= -D TIME_TO_SLEEP=10000 -MMD -Wall -Wextra -Werror
 
 NAME = minitalk
 

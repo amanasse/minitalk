@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 11:09:49 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/20 16:19:17 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/23 10:35:01 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ typedef struct s_client
 	char	*str;
 	char	*chaine_octet;
 	int		i;
+	int		av;
 	void	*tmp;
 	void	*tmp2;
 }				t_client;
