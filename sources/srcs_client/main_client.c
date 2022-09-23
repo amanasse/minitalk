@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:34:16 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/23 10:53:14 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/23 11:03:23 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	check_arg(char **argv)
 	g_c.av = ft_atoi(argv[1]);
 	if (g_c.av <= 0)
 	{
-		write (2, "Error\n", 6);
+		write (2, "Error\nWrong PID\n", 16);
 		return (0);
 	}
 	if (kill(g_c.av, 0) != 0)
