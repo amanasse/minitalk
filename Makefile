@@ -14,12 +14,11 @@ DEP = ${SRCS:.c=.d}
 DEP2 = ${SRCS2:.c=.d}
 DEPS = $(addprefix $(DIR_OBJ), $(DEP))
 DEPS2 = $(addprefix $(DIR_OBJ), $(DEP2))
+NAME = minitalk
 
 HEADERS	= -I includes
 CC		= gcc
-CFLAGS	= -D TIME_TO_SLEEP=10000 -MMD -Wall -Wextra -Werror
-
-NAME = minitalk
+CFLAGS	= -D TIME_TO_SLEEP=180 -MMD -Wall -Wextra -Werror
 
 ${NAME} : client server
 
@@ -51,4 +50,4 @@ $(DIR_OBJ)%.o: $(DIR_SRC_SERVER)%.c
 
 -include ${DEPS} ${DEPS2}
 
-.PHONY: all client server clean fclean re
+.PHONY: all clean fclean re

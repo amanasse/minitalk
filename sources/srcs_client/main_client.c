@@ -6,7 +6,7 @@
 /*   By: amanasse <amanasse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:34:16 by amanasse          #+#    #+#             */
-/*   Updated: 2022/09/23 11:03:23 by amanasse         ###   ########.fr       */
+/*   Updated: 2022/09/26 11:20:41 by amanasse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,41 +39,31 @@ int	check_arg(char **argv)
 char	*binaire(char a)
 {
 	int		i;
-	char	*octet;
 
 	i = 6;
-	octet = malloc(8);
-	if (octet == NULL)
-		return (NULL);
 	while (i >= 0)
 	{
-		octet[i] = a % 2 + '0';
+		g_c.binaire[i] = a % 2 + '0';
 		a = a / 2;
 		i--;
 	}
-	octet[7] = '\0';
-	return (octet);
+	g_c.binaire[7] = '\0';
+	return (g_c.binaire);
 }
 
 int	make_chaine_octet(void)
 {
-	g_c.tmp = binaire(g_c.str[g_c.i]);
-	if (g_c.tmp == NULL)
-		return (0);
-	g_c.tmp2 = g_c.chaine_octet;
-	g_c.chaine_octet = ft_strjoin(g_c.chaine_octet, g_c.tmp);
+	binaire(g_c.str[g_c.i]);
+	g_c.p_str = g_c.chaine_octet;
+	g_c.chaine_octet = ft_strjoin(g_c.chaine_octet, g_c.binaire);
 	if (g_c.chaine_octet == NULL)
 	{
-		free(g_c.tmp);
-		free(g_c.tmp2);
-		g_c.tmp = NULL;
-		g_c.tmp2 = NULL;
+		free(g_c.p_str);
+		g_c.p_str = NULL;
 		return (0);
 	}
-	free(g_c.tmp);
-	free(g_c.tmp2);
-	g_c.tmp = NULL;
-	g_c.tmp2 = NULL;
+	free(g_c.p_str);
+	g_c.p_str = NULL;
 	return (1);
 }
 
@@ -89,9 +79,7 @@ void	send_signal(void)
 		else
 		{
 			write (2, "Error\n", 6);
-			free(g_c.tmp);
 			free(g_c.chaine_octet);
-			g_c.tmp = NULL;
 			g_c.chaine_octet = NULL;
 			exit(0);
 		}
